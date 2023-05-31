@@ -1,0 +1,39 @@
+<p>
+ <mat-toolbar class="toolbar">
+    <span>Irrigation System</span>
+ </mat-toolbar>
+<p>
+
+  <br>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Plot Management</mat-card-title>
+    </mat-card-header>
+  </mat-card>
+
+  <button mat-raised-button (click)="addPlot()"> Add Plot </button>
+
+<div class="table-container">
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Plot Id</th>
+      <th>Plot Size</th>
+      <th>Crop</th>
+      <th>Edit Plot</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tbody mat-row>
+    <tr *ngFor="let plot of plots">
+      <td mat-header-row>{{plot.plotId}}</td>
+      <td  mat-header-row>{{plot.plotSize}}</td>
+      <td  mat-header-row>{{plot.crop}}</td>
+      <td  mat-header-row> <button mat-icon-button (click)="editPlot(plot)"> <mat-icon>edit</mat-icon> </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

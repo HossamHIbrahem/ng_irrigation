@@ -1,0 +1,19 @@
+<h2>Add Plot</h2>
+<form #plotForm>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Crop</mat-label>
+      <input matInput placeholder="Crop"  (change)="plot.crop =$any ($event).target.value" required>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Plot Size</mat-label>
+      <input matInput placeholder="Plot Size"  (change)="plot.plotSize =$any ($event).target.value" required>
+    </mat-form-field>
+  </p>
+</form>
+
+<button mat-raised-button [disabled]="!plotForm.checkValidity()" (click)="save()">Save Plot</button>
+<button mat-raised-button mat-dialog-close>Cancel</button>
+
